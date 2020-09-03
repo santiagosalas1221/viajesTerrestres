@@ -15,7 +15,7 @@ Por orden de llegada se debe definir el cupo de los pasajeros. 
 
 - ¿Podré hacer el viaje?
 - ¿En qué bus me tocaría irme?
-- ¿Con cuantas personas me acuerdo voy?
+- ¿Con cuantas personas voy en el viaje?
 
 Son preguntas que se debe cuestionar para implementar el caso de uso.
 
