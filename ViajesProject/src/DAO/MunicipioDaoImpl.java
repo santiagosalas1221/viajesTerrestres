@@ -1,5 +1,8 @@
 package DAO;
 
+/**
+ * Implememtacion de la interfaz 'IMunicipioDao' en esta clase se ejecutan las sentencias sql para la DB
+ */
 import Entidades.Buses;
 import Entidades.Municipio;
 import Connection.ConexionDB;
@@ -12,6 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MunicipioDaoImpl implements IMunicipioDao {
+
+    /**
+     * Metodo encargado de crear nuevos municipios en la BD
+     */
     @Override
     public boolean CrearMunicipio(Municipio municipio) {
         boolean registrar = false;
@@ -34,6 +41,12 @@ public class MunicipioDaoImpl implements IMunicipioDao {
         }
         return registrar;
     }
+
+
+    /**
+     * Consulta los municipios existentes en la BD
+     * @return devuelve la lista de municipios existentes
+     */
 
     @Override
     public List<Municipio> obtener() {
