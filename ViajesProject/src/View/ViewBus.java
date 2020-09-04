@@ -11,7 +11,7 @@ public class ViewBus {
 
     public void verBuses(List<Buses> buses) {
         for (Buses bus : buses) {
-            System.out.println("Datos del Bus: "+bus.getId_bus()+""+bus.getPuestos());
+            System.out.println("Datos del Bus: id: "+bus.getId_bus()+" Nro puestos: "+bus.getPuestos());
         }
     }
 }
