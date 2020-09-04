@@ -16,7 +16,9 @@ public class ControllerMunicipio {
     //llama al DAO para guardar un munipio
     public void registrar(Municipio municipio ) {
         IMunicipioDao dao= new MunicipioDaoImpl();
-        dao.CrearMunicipio(municipio);
+        if(dao.CrearMunicipio(municipio)){
+            vista.resultRegister();
+        };
     }
     //llama al DAO para obtener todos los municipios y luego los muestra en la vista
     public void verMunicipios(){

@@ -15,4 +15,7 @@ public class ViewMunicipio {
             System.out.println("Datos del Municipio: id: "+municipio.getId_municipio()+", Nombre: "+municipio.getNombre_Municipio());
         }
     }
+    public void resultRegister(){
+        System.out.println("Registro exitoso");
+    }
 }

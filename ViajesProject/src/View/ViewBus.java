@@ -14,4 +14,8 @@ public class ViewBus {
             System.out.println("Datos del Bus: id: "+bus.getId_bus()+" Nro puestos: "+bus.getPuestos());
         }
     }
+
+    public void resultRegister(){
+        System.out.println("Registro satisfactorio");
+    }
 }

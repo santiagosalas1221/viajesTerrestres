@@ -59,6 +59,21 @@ public class ViajesProject {
                         break;
                 }
                 break;
+            case 2:
+                Scanner entradapuestos = new Scanner(System.in);
+                controllerPersonas.verMsgAsociacion("Ingrese número de puestos que tendrá el bus nuevo.");
+                int NroPuestos=entradapuestos.nextInt();
+                controllerBus.registrar(new Buses (0, NroPuestos));
+                break;
+            case 3:
+                Scanner entradaNombre = new Scanner(System.in);
+                controllerPersonas.verMsgAsociacion("Ingrese nombre del nuevo municipio");
+                String nombrem = entradaNombre.nextLine();
+                controllerMunicipio.registrar(new Municipio(0, nombrem));
+                break;
+            case 4:
+                asociarPersona();
+                break;
             default:
                 controllerPersonas.verMsgAsociacion("Datos erróneos");
                 break;
