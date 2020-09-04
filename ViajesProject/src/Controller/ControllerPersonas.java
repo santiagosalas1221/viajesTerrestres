@@ -40,7 +40,7 @@ public class ControllerPersonas {
 
     public boolean VerificacionPuestos(Buses bus){
         IPersonasDao dao= new PersonasDaoImpl();
-       return dao.PersonasXBus(bus.getId_bus())<bus.getPuestos();
+       return dao.PersonasXBus(bus.getId_bus())<(bus.getPuestos()/2);
     }
 
     public  void verMsgAsociacion(String msg){
