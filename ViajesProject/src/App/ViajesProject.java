@@ -74,43 +74,14 @@ public class ViajesProject {
             case 4:
                 asociarPersona();
                 break;
+            case 5:
+                consultarPasajeroAllbus();
+                break;
             default:
                 controllerPersonas.verMsgAsociacion("Datos erróneos");
                 break;
         }
-        Buses bus = new Buses(0, 2);
-        Municipio municipio = new Municipio(1,"Medellin");
-        Municipio municipio1 = new Municipio(2,"RioNegro");
 
-        // controlador
-
-        //ControllerMunicipio controller2 = new ControllerMunicipio();
-
-        // Guarda un bus a través del controlador
-           // controllerBus.registrar(bus);
-
-        // ver buses
-       // controller.verBuses();
-
-        // ver personas
-
-            //asociarPersona();
-            //asociarPersona();
-
-          //ControllerPersonas controllerP = new ControllerPersonas();
-          //controllerP.verPersonas();
-
-
-
-       // Personas p = new Personas(1014294, "Santiago", bus, municipio, municipio1);
-
-        //ver personas
-       // controllerP.registrar(p);
-      //  controller2.registrar(municipio);
-      //  controller2.registrar(municipio1);
-
-        //asociarPersona();
-        //consultarPasajeroAllbus();
     }
 
     public static void asociarPersona(){
