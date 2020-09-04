@@ -117,6 +117,11 @@ public class PersonasDaoImpl implements IPersonasDao {
         return municipio;
     }
 
+    /**
+     * Metodo encargado de consultar buses por id
+     * @param id_objetivo
+     * @return municipio
+     */
 
     public static Buses consultaBus(int id_objetivo){
 
