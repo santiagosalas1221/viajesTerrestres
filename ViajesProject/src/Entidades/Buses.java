@@ -19,6 +19,7 @@ public class Buses {
         this.puestos = puestos;
     }
 
+    //Constructor Vacio
     public Buses() { }
 
     //Getters and setters
