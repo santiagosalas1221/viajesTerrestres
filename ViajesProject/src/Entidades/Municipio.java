@@ -11,17 +11,15 @@ package Entidades;
  */
 public class Municipio {
 
-    private int id_municipio;
+     private int id_municipio;
     private String nombre_Municipio;
-
+    
     public Municipio(int id_municipio, String nombre_Municipio) {
         this.id_municipio = id_municipio;
         this.nombre_Municipio = nombre_Municipio;
     }
 
-    public Municipio(){
-
-    }
+    public Municipio(){ }
 
 
     public int getId_municipio() {
@@ -40,4 +38,3 @@ public class Municipio {
         this.nombre_Municipio = nombre_Municipio;
     }
 }
-

@@ -21,7 +21,7 @@ public class ViajesProject {
 
         // controlador
        // ControllerBus controller = new ControllerBus();
-        ControllerMunicipio controller2 = new ControllerMunicipio();
+      //  ControllerMunicipio controller2 = new ControllerMunicipio();
 
         // Guarda un bus a través del controlador
        // controller.registrar(bus);
@@ -29,14 +29,20 @@ public class ViajesProject {
         // ver buses
        // controller.verBuses();
 
+        // ver personas
 
-        ControllerPersonas controllerP = new ControllerPersonas();
 
-        Personas p = new Personas(1014294, "Santiago", bus, municipio, municipio1);
+
+          ControllerPersonas controllerP = new ControllerPersonas();
+          controllerP.verPersonas();
+
+
+
+       // Personas p = new Personas(1014294, "Santiago", bus, municipio, municipio1);
 
         //ver personas
-        controllerP.registrar(p);
+       // controllerP.registrar(p);
       //  controller2.registrar(municipio);
-        controller2.registrar(municipio1);
+      //  controller2.registrar(municipio1);
     }
 }

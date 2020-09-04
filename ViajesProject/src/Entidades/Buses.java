@@ -11,17 +11,15 @@ package Entidades;
  */
 public class Buses {
 
-    private int id_bus;
+     private int id_bus;
     private int puestos;
-
+    
     public Buses(int id_bus, int puestos) {
         this.id_bus = id_bus;
         this.puestos = puestos;
     }
 
-    public Buses(){
-
-    }
+    public Buses() { }
 
     //Getters and setters
     public int getId_bus() {
@@ -39,9 +37,9 @@ public class Buses {
     public void setPuestos(int puestos) {
         this.puestos = puestos;
     }
-
-
-
-
-
+    
+ 
+    
+    
+    
 }

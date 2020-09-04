@@ -35,6 +35,8 @@ public class Personas {
         this.nro_documento = nro_documento;
     }
 
+    public Personas(){ }
+
     public String getNombre() {
         return nombre;
     }

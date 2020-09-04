@@ -3,7 +3,7 @@ package DAO;
 /**
  * Implememtacion de la interfaz 'IMunicipioDao' en esta clase se ejecutan las sentencias sql para la DB
  */
-import Entidades.Buses;
+
 import Entidades.Municipio;
 import Connection.ConexionDB;
 

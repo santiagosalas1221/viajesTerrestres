@@ -1,10 +1,14 @@
 package Controller;
 
 
+import DAO.BusDaoImpl;
 import DAO.IPersonasDao;
 import DAO.PersonasDaoImpl;
 import Entidades.Personas;
 import View.ViewPersonas;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ControllerPersonas {
 
@@ -17,11 +21,12 @@ public class ControllerPersonas {
         IPersonasDao dao= new PersonasDaoImpl();
         dao.CrearPasajero(Persona);
     }
-    /*//llama al DAO para obtener todos los buses y luego los muestra en la vista
-    public void verBuses(){
-        List<Buses> buses = new ArrayList<Buses>();
-        IBusesDao dao= new  BusDaoImpl();
-        buses=dao.obtener();
-        vista.verBuses(buses);
-    }*/
+
+   // llama al DAO para obtener todos los buses y luego los muestra en la vista
+    public void verPersonas(){
+        List<Personas> personas = new ArrayList<Personas>();
+        IPersonasDao dao= new PersonasDaoImpl();
+        personas=dao.obtener();
+        vista.verPersonas(personas);
+    }
 }
