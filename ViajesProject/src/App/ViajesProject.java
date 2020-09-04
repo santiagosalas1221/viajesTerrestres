@@ -23,7 +23,7 @@ public class ViajesProject {
 
     public static void main(String[] args) {
 
-        Buses bus = new Buses(1, 1);
+        Buses bus = new Buses(0, 2);
         Municipio municipio = new Municipio(1,"Medellin");
         Municipio municipio1 = new Municipio(2,"RioNegro");
 
@@ -32,7 +32,7 @@ public class ViajesProject {
         //ControllerMunicipio controller2 = new ControllerMunicipio();
 
         // Guarda un bus a través del controlador
-      // controllerBus.registrar(bus);
+           // controllerBus.registrar(bus);
 
         // ver buses
        // controller.verBuses();
@@ -82,6 +82,7 @@ public class ViajesProject {
         Destino=entradaDes.nextInt();
 
         List<Buses> buses = controllerBus.Buses();
+
         int sw=0;
         int i=0;
         do {
@@ -92,6 +93,12 @@ public class ViajesProject {
                 i++;
                sw=0;
             }
-        }while(sw==0);
+        }while(sw==0 && i<buses.size());
+
+        if(i == buses.size()){
+            System.out.println("NO puede viajar.");
+        }else{
+            System.out.println("Feliz viaje.");
+        }
     }
 }
