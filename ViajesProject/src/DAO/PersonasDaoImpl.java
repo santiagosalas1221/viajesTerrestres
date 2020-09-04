@@ -110,6 +110,42 @@ public class PersonasDaoImpl implements IPersonasDao {
         return pxb;
     }
 
+    @Override
+    public Personas pasajero(int doc) {
+
+        Connection co =null;
+        Statement stm= null;
+        ResultSet rs=null;
+
+
+        String sql="SELECT * FROM personas WHERE nro_documento =  '" + doc + "' ";
+
+        Personas persona = new Personas();
+
+        try {
+            co= ConexionDB.conectar();
+            stm=co.createStatement();
+            rs=stm.executeQuery(sql);
+            while (rs.next()) {
+                persona.setNro_documento(rs.getInt(1));
+                persona.setNombre(rs.getString(2));
+                Buses bus = consultaBus(rs.getInt(5));
+                persona.setBus(bus);
+                Municipio origen = consultaMunicipio(rs.getInt(3));
+                persona.setOrigen(origen);
+                Municipio destino = consultaMunicipio(rs.getInt(4));
+                persona.setDestino(destino);
+            }
+            stm.close();
+            rs.close();
+            co.close();
+        } catch (SQLException e) {
+            System.out.println("Error: Clase PersonasImplDao consulta persona Id" + "");
+            e.printStackTrace();
+        }
+        return persona;
+    }
+
     /**
      * Metodo encargado de consultar municipios por id
      * @param id_objetivo
