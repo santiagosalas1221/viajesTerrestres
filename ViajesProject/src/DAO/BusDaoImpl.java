@@ -10,8 +10,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implememtacion de la interfaz 'IBusesDao' en esta clase se ejecutan las sentencias sql para la DB
+ */
+
 public class BusDaoImpl implements IBusesDao {
 
+    /**
+     * Metodo encargado de crear nuevos buses en la BD
+     */
     @Override
     public boolean CrearBuses(Buses bus) {
         boolean registrar = false;
@@ -35,6 +42,10 @@ public class BusDaoImpl implements IBusesDao {
         return registrar;
     }
 
+    /**
+     * Consulta los buses existentes en la BD
+     * @return devuelve la lista de buses existentes
+     */
     @Override
     public List<Buses> obtener() {
         Connection co =null;
