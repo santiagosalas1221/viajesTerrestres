@@ -16,7 +16,6 @@ import java.util.List;
 
 public class BusDaoImpl implements IBusesDao {
 
-
     /**
      * Metodo encargado de crear nuevos buses en la BD
      */

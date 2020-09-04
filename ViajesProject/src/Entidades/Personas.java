@@ -12,27 +12,27 @@ package Entidades;
 public class Personas {
 
 
-    private int nro_docuemento;
+    private int nro_documento;
     private String nombre;
     private Buses bus;
     private Municipio origen;
     private Municipio destino;
 
 
-    public Personas(int nro_docuemento, String nombre, Buses bus, Municipio origen, Municipio destino) {
-        this.nro_docuemento = nro_docuemento;
+    public Personas(int nro_documento, String nombre, Buses bus, Municipio origen, Municipio destino) {
+        this.nro_documento = nro_documento;
         this.nombre = nombre;
         this.bus = bus;
         this.origen = origen;
         this.destino = destino;
     }
 
-    public int getNro_docuemento() {
-        return nro_docuemento;
+    public int getNro_documento() {
+        return nro_documento;
     }
 
-    public void setNro_docuemento(int nro_docuemento) {
-        this.nro_docuemento = nro_docuemento;
+    public void setNro_documento(int nro_documento) {
+        this.nro_documento = nro_documento;
     }
 
     public String getNombre() {
