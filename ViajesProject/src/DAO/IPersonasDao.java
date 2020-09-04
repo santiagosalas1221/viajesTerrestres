@@ -1,5 +1,6 @@
 package DAO;
 
+import Entidades.Buses;
 import Entidades.Personas;
 
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
  */
 public interface IPersonasDao {
 
-    public boolean CrearPasajero(Personas personas);
+    public boolean CrearPasajero(int doc, String nombre, int id_origen, int id_destino, Buses bus);
     public List<Personas> obtener();
+    public int PersonasXBus(int id_bus);
 }

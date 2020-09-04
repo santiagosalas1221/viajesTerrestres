@@ -25,4 +25,9 @@ public class ControllerBus {
         buses=dao.obtener();
         vista.verBuses(buses);
     }
+
+    public List<Buses> Buses(){
+        IBusesDao dao= new  BusDaoImpl();
+        return dao.obtener();
+    }
 }

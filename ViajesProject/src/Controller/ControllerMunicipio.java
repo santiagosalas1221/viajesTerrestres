@@ -25,4 +25,6 @@ public class ControllerMunicipio {
         municipios=dao.obtener();
         vista.verMunicipios(municipios);
     }
+
+
 }
