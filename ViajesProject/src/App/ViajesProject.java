@@ -5,17 +5,21 @@
  */
 package App;
 
-/**
- *
- * @author santi
- */
+import Controller.ControllerBus;
+import Entidades.Buses;
+
 public class ViajesProject {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //Buses bus = new Buses(0, 40);
+
+        // controlador
+        ControllerBus controller = new ControllerBus();
+
+        // Guarda un bus a través del controlador
+        //controller.registrar(bus);
+
+        // ver buses
+        controller.verBuses();
     }
-    
 }
