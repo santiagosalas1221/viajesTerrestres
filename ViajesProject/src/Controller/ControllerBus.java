@@ -16,7 +16,8 @@ public class ControllerBus {
     //llama al DAO para guardar un bus
     public void registrar(Buses bus ) {
         IBusesDao dao= new BusDaoImpl();
-        dao.CrearBuses(bus);
+        if(dao.CrearBuses(bus))
+            vista.resultRegister();
     }
     //llama al DAO para obtener todos los buses y luego los muestra en la vista
     public void verBuses(){

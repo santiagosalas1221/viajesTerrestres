@@ -10,53 +10,78 @@ import Controller.ControllerMunicipio;
 import Controller.ControllerPersonas;
 import Entidades.Buses;
 import Entidades.Municipio;
-import Entidades.Personas;
 
-import javax.print.Doc;
 import java.util.List;
 import java.util.Scanner;
 
 public class ViajesProject {
 
-    private static ControllerMunicipio cm = new ControllerMunicipio();
+    private static ControllerMunicipio controllerMunicipio = new ControllerMunicipio();
     private static ControllerBus controllerBus = new ControllerBus();
     private static ControllerPersonas controllerPersonas = new ControllerPersonas();
 
     public static void main(String[] args) {
 
-        Buses bus = new Buses(0, 2);
-        Municipio municipio = new Municipio(1,"Medellin");
-        Municipio municipio1 = new Municipio(2,"RioNegro");
+        Scanner entradaOpc = new Scanner(System.in);
+        controllerPersonas.verMsgAsociacion("MENÚ "+"\n"+
+                "Digite el número según la opción que desea: "+"\n"+
+                "1. Listar" +"\n"+
+                "2. Crear Bus "+"\n"+
+                "3. Crear Municipios"+"\n"+
+                "4. Agregar pasajero a un bus"+"\n"+
+                "5. Consultar pasajero en todos los buses");
+        int opc= entradaOpc.nextInt();
 
-        // controlador
+        switch (opc){
+            case 1:
+                Scanner entradaOpclist = new Scanner(System.in);
 
-        //ControllerMunicipio controller2 = new ControllerMunicipio();
+                controllerPersonas.verMsgAsociacion("Listar"+"\n"+
+                        "Digite el número según la opción que desea: "+"\n"+
+                        "1. Buses" +"\n"+
+                        "2. Municipios "+"\n"+
+                        "3. Pasajeros");
 
-        // Guarda un bus a través del controlador
-           // controllerBus.registrar(bus);
+                int opclist = entradaOpclist.nextInt();
 
-        // ver buses
-       // controller.verBuses();
+                switch (opclist){
+                    case 1:
+                        controllerBus.verBuses();
+                        break;
+                    case 2:
+                        controllerMunicipio.verMunicipios();
+                        break;
+                    case 3:
+                        controllerPersonas.verPersonas();
+                        break;
+                    default:
+                        controllerPersonas.verMsgAsociacion("Datos erróneos");
+                        break;
+                }
+                break;
+            case 2:
+                Scanner entradapuestos = new Scanner(System.in);
+                controllerPersonas.verMsgAsociacion("Ingrese número de puestos que tendrá el bus nuevo.");
+                int NroPuestos=entradapuestos.nextInt();
+                controllerBus.registrar(new Buses (0, NroPuestos));
+                break;
+            case 3:
+                Scanner entradaNombre = new Scanner(System.in);
+                controllerPersonas.verMsgAsociacion("Ingrese nombre del nuevo municipio");
+                String nombrem = entradaNombre.nextLine();
+                controllerMunicipio.registrar(new Municipio(0, nombrem));
+                break;
+            case 4:
+                asociarPersona();
+                break;
+            case 5:
+                consultarPasajeroAllbus();
+                break;
+            default:
+                controllerPersonas.verMsgAsociacion("Datos erróneos");
+                break;
+        }
 
-        // ver personas
-
-            //asociarPersona();
-            //asociarPersona();
-
-          //ControllerPersonas controllerP = new ControllerPersonas();
-          //controllerP.verPersonas();
-
-
-
-       // Personas p = new Personas(1014294, "Santiago", bus, municipio, municipio1);
-
-        //ver personas
-       // controllerP.registrar(p);
-      //  controller2.registrar(municipio);
-      //  controller2.registrar(municipio1);
-
-        //asociarPersona();
-        consultarPasajeroAllbus();
     }
 
     public static void asociarPersona(){
@@ -76,7 +101,7 @@ public class ViajesProject {
         controllerPersonas.verMsgAsociacion("Digita tu nombre");
         Nombre= entradaN.nextLine();
 
-        cm.verMunicipios();
+        controllerMunicipio.verMunicipios();
 
         controllerPersonas.verMsgAsociacion("Ingresa código del municipio de origen según la lista anterior");
         Origen=entradaO.nextInt();
