@@ -21,7 +21,7 @@ public class ViajesProject {
 
         // controlador
        // ControllerBus controller = new ControllerBus();
-     //   ControllerMunicipio controller2 = new ControllerMunicipio();
+        ControllerMunicipio controller2 = new ControllerMunicipio();
 
         // Guarda un bus a través del controlador
        // controller.registrar(bus);
@@ -37,6 +37,6 @@ public class ViajesProject {
         //ver personas
         controllerP.registrar(p);
       //  controller2.registrar(municipio);
-      //  controller2.registrar(municipio1);
+        controller2.registrar(municipio1);
     }
 }

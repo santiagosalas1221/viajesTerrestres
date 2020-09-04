@@ -22,8 +22,8 @@ public class PersonasDaoImpl implements IPersonasDao {
      /*   String sql= "INSERT INTO personas (nro_documento, nombre_pasajero, id_origen, id_destino, id_Bus) values ( '" + personas.getNro_documento() + " " + personas.getNombre() + " " + personas.getOrigen().getId_municipio() + " " + personas.getDestino().getId_municipio() + " " +
                 personas.getBus().getId_bus() + "')";*/
 
-        String sql="INSERT INTO personas values ('"+personas.getNro_documento()+ " , " + personas.getNombre() + " , " + personas.getOrigen().getId_municipio()
-        + " , " + personas.getDestino().getId_municipio() + " , " + personas.getBus().getId_bus() + "')";
+        String sql="INSERT INTO personas values ('"+personas.getNro_documento()+"','" + personas.getNombre() + "','" + personas.getOrigen().getId_municipio()
+        + "','" + personas.getDestino().getId_municipio() + "','" + personas.getBus().getId_bus() + "')";
 
         try {
             con= ConexionDB.conectar();
