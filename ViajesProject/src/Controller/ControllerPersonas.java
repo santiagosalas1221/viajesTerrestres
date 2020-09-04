@@ -31,9 +31,20 @@ public class ControllerPersonas {
         vista.verPersonas(personas);
     }
 
+    public void verPersona(int doc){
+        Personas persona = new Personas();
+        IPersonasDao dao= new PersonasDaoImpl();
+        persona=dao.pasajero(doc);
+        vista.verPersona(persona);
+    }
+
     public boolean VerificacionPuestos(Buses bus){
         IPersonasDao dao= new PersonasDaoImpl();
        return dao.PersonasXBus(bus.getId_bus())<bus.getPuestos();
+    }
+
+    public  void verMsgAsociacion(String msg){
+        vista.personaAsociacion(msg);
     }
 
 }

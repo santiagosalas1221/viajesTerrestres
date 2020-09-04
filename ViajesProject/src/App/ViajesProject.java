@@ -12,6 +12,7 @@ import Entidades.Buses;
 import Entidades.Municipio;
 import Entidades.Personas;
 
+import javax.print.Doc;
 import java.util.List;
 import java.util.Scanner;
 
@@ -39,8 +40,8 @@ public class ViajesProject {
 
         // ver personas
 
-            asociarPersona();
-            asociarPersona();
+            //asociarPersona();
+            //asociarPersona();
 
           //ControllerPersonas controllerP = new ControllerPersonas();
           //controllerP.verPersonas();
@@ -53,6 +54,9 @@ public class ViajesProject {
        // controllerP.registrar(p);
       //  controller2.registrar(municipio);
       //  controller2.registrar(municipio1);
+
+        //asociarPersona();
+        consultarPasajeroAllbus();
     }
 
     public static void asociarPersona(){
@@ -66,19 +70,18 @@ public class ViajesProject {
         Scanner entradaO = new Scanner(System.in);
         Scanner entradaDes = new Scanner(System.in);
 
-
-        System.out.println("Hola: Digita tu documento");
+        controllerPersonas.verMsgAsociacion("Hola: Digita tu documento");
         Documento= entradaD.nextInt();
 
-        System.out.println("Digita tu nombre");
+        controllerPersonas.verMsgAsociacion("Digita tu nombre");
         Nombre= entradaN.nextLine();
 
         cm.verMunicipios();
 
-        System.out.println("Ingresa código del municipio de origen según la lista anterior");
+        controllerPersonas.verMsgAsociacion("Ingresa código del municipio de origen según la lista anterior");
         Origen=entradaO.nextInt();
 
-        System.out.println("Ingresa código del municipio de destino según la lista anterior");
+        controllerPersonas.verMsgAsociacion("Ingresa código del municipio de destino según la lista anterior");
         Destino=entradaDes.nextInt();
 
         List<Buses> buses = controllerBus.Buses();
@@ -96,9 +99,18 @@ public class ViajesProject {
         }while(sw==0 && i<buses.size());
 
         if(i == buses.size()){
-            System.out.println("NO puede viajar.");
+            controllerPersonas.verMsgAsociacion("NO puede viajar.");
         }else{
-            System.out.println("Feliz viaje.");
+            controllerPersonas.verMsgAsociacion("Feliz viaje.");
         }
     }
+
+    public static void consultarPasajeroAllbus(){
+        int Documento;
+        Scanner entradaD = new Scanner(System.in);
+        controllerPersonas.verMsgAsociacion("Ingresa documento:");
+        Documento= entradaD.nextInt();
+        controllerPersonas.verPersona(Documento);
+    }
+
 }
