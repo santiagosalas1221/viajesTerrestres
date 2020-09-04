@@ -19,6 +19,10 @@ public class Municipio {
         this.nombre_Municipio = nombre_Municipio;
     }
 
+    public Municipio(){
+
+    }
+
 
     public int getId_municipio() {
         return id_municipio;
