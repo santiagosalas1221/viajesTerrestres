@@ -36,7 +36,7 @@ public class BusDaoImpl implements IBusesDao {
             stm.close();
             con.close();
         } catch (SQLException e) {
-            System.out.println("Error: Clase ClienteDaoImple, método registrar");
+            System.out.println("Error: Clase BusDaoImple, método registrar");
             e.printStackTrace();
         }
         return registrar;

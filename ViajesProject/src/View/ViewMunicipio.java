@@ -12,7 +12,7 @@ public class ViewMunicipio {
 
     public void verMunicipios(List<Municipio> municipios) {
         for (Municipio municipio : municipios) {
-            System.out.println("Datos del Municipio: Nombre:"+municipio.getNombre_Municipio());
+            System.out.println("Datos del Municipio:"+municipio.getId_municipio()+" Nombre:"+municipio.getNombre_Municipio());
         }
     }
 }

@@ -21,7 +21,7 @@ public class PersonasDaoImpl implements IPersonasDao {
      * Metodo encargado de crear nuevos pasajeros en la BD
      */
     @Override
-    public boolean CrearPasajero(Personas personas) {
+    public boolean CrearPasajero(int doc, String nombre, int id_origen, int id_destino, Buses bus) {
 
         boolean registrar = false;
 
@@ -29,8 +29,8 @@ public class PersonasDaoImpl implements IPersonasDao {
         Connection con;
 
 
-        String sql="INSERT INTO personas values ('"+personas.getNro_documento()+"','" + personas.getNombre() + "','" + personas.getOrigen().getId_municipio()
-        + "','" + personas.getDestino().getId_municipio() + "','" + personas.getBus().getId_bus() + "')";
+        String sql="INSERT INTO personas values ('"+doc+"','" + nombre+ "','" + consultaMunicipio(id_origen).getId_municipio()
+        + "','" + consultaMunicipio(id_destino).getId_municipio() + "','" + bus.getId_bus() + "')";
 
         try {
             con= ConexionDB.conectar();
@@ -81,6 +81,33 @@ public class PersonasDaoImpl implements IPersonasDao {
             e.printStackTrace();
         }
         return listaPersonas;
+    }
+
+    @Override
+    public int PersonasXBus(int id_bus) {
+        Connection co =null;
+        Statement stm= null;
+        ResultSet rs=null;
+        int pxb=0;
+
+
+        String sql="SELECT COUNT(*) FROM personas WHERE idBus =  '" + id_bus + "' ";
+
+        try {
+            co= ConexionDB.conectar();
+            stm=co.createStatement();
+            rs=stm.executeQuery(sql);
+            while (rs.next()) {
+                pxb= rs.getInt(1);
+            }
+            stm.close();
+            rs.close();
+            co.close();
+        } catch (SQLException e) {
+            System.out.println("Error: Clase PersonasImplDao consulta municipio Id" + "");
+            e.printStackTrace();
+        }
+        return pxb;
     }
 
     /**

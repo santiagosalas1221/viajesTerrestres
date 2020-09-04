@@ -4,6 +4,7 @@ package Controller;
 import DAO.BusDaoImpl;
 import DAO.IPersonasDao;
 import DAO.PersonasDaoImpl;
+import Entidades.Buses;
 import Entidades.Personas;
 import View.ViewPersonas;
 
@@ -17,9 +18,9 @@ public class ControllerPersonas {
     public ControllerPersonas() {
     }
     //llama al DAO para guardar una persona
-    public void registrar(Personas Persona ) {
+    public void registrar(int doc, String nombre, int id_origen, int id_destino, Buses bus) {
         IPersonasDao dao= new PersonasDaoImpl();
-        dao.CrearPasajero(Persona);
+        dao.CrearPasajero(doc, nombre, id_origen, id_destino, bus);
     }
 
    // llama al DAO para obtener todos los buses y luego los muestra en la vista
@@ -29,4 +30,10 @@ public class ControllerPersonas {
         personas=dao.obtener();
         vista.verPersonas(personas);
     }
+
+    public boolean VerificacionPuestos(Buses bus){
+        IPersonasDao dao= new PersonasDaoImpl();
+       return dao.PersonasXBus(bus.getId_bus())<bus.getPuestos();
+    }
+
 }
