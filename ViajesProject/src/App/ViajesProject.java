@@ -55,7 +55,7 @@ public class ViajesProject {
       //  controller2.registrar(municipio);
       //  controller2.registrar(municipio1);
 
-        asociarPersona();
+        //asociarPersona();
         consultarPasajeroAllbus();
     }
 
