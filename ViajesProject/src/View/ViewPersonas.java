@@ -10,9 +10,9 @@ public class ViewPersonas {
         System.out.println("Datos de pasajero: "+persona);
     }
 
-    public void verBuses(List<Personas> personas) {
+    public void verPersonas(List<Personas> personas) {
         for (Personas persona : personas) {
-            System.out.println("Datos del Bus: "+persona.getNro_documento()+" "+persona.getNombre() + " "+persona.getOrigen().getNombre_Municipio()  + " "+persona.getDestino().getNombre_Municipio());
+            System.out.println("Datos del pasajero: Nombre: "+persona.getNro_documento()+" "+persona.getNombre() + " "+persona.getOrigen().getNombre_Municipio()  + " "+persona.getDestino().getNombre_Municipio());
         }
     }
 }
