@@ -19,6 +19,10 @@ public class Buses {
         this.puestos = puestos;
     }
 
+    public Buses(){
+
+    }
+
     //Getters and setters
     public int getId_bus() {
         return id_bus;
